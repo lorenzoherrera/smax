@@ -3,7 +3,7 @@
 	 * Rating
 	 *
 	 * @package Smax
-	 * @category Main
+	 * @category Engine
 	 */
 
 	namespace Smax;
@@ -14,68 +14,103 @@
 	 * A class that represents an obtained single rating about a content
 	 *
 	 * @package Smax
-	 * @Category Main
+	 * @category Engine
 	 */
 	class Rating {
 		/**
-		 * @var integer $timestamp The timestamp when the Rating was emmited
+		 * @var integer $timestamp The timestamp when the Rating was received
 		 */
 		private $timestamp;
 
 		/**
-		 * Rating
+		 * @var integer $rating The rating level, one of the available Smax\RATING_*
+		*/
+		private $rating;
+
+		/**
+		 * @var string $description A description, mainly for debugging uses
+		 */
+		private $description;
+
+		/**
+		 * __construct
 		 *
 		 * Constructs a Rating object with the given $setup specification
 		 *
 		 * @param array $setup A key-value array containing the specification
 		 * @return boolean True when constrution was done without errors, false otherwise
 		 */
-		function Rating($setup) {
-			$this->timestamp = $setup["timestamp"];
+		function __construct($setup) {
+			$this->setTimestamp($setup["timestamp"]);
+			if ($setup["description"])
+				$this->setDescription($setup["description"]);
+			return true;
 		}
-	}
 
-	/**
-	 * RatingDefault
-	 *
-	 * A class that represents de default single rating for a content which is to be added at the moment of its creation
-	 *
-	 * @package Smax
-	 * @Category Main
-	 */
-	class RatingDefault extends \Smax\Rating {
 		/**
-		 * RatingDefault
+		 * setTimestamp
 		 *
-		 * Constructs a RatingDefault object with the given $setup specification
+		 * Sets the timestamp when the Rating was received 
 		 *
-		 * @param array $setup A key-value array containing the specification
-		 * @return boolean True when constrution was done without errors, false otherwise
+		 * @param integer $timestamp Timestamp
 		 */
-		function RatingDefault($setup) {
-			_parent::Rating($setup);
+		function setTimestamp($timestamp) {
+			$this->timestamp = $timestamp;
 		}
-	}
 
-	/**
-	 * RatingOwn
-	 *
-	 * A class that represents an obtained single rating about a content emmited by the owner of the content
-	 *
-	 * @package Smax
-	 * @Category Main
-	 */
-	class RatingOwn extends \Smax\Rating {
 		/**
-		 * RatingOwn
+		 * getTimestamp
 		 *
-		 * Constructs a RatingOwn object with the given $setup specification
+		 * Returns the timestamp
 		 *
-		 * @param array $setup A key-value array containing the specification
-		 * @return boolean True when constrution was done without errors, false otherwise
+		 * @return integer The timestamp
 		 */
-		function RatingOwn($setup) {
-			_parent::Rating($setup);
+		function getTimestamp() {
+			return $this->timestamp;
+		}
+
+		/**
+		 * setDescription
+		 *
+		 * Sets the description
+		 *
+		 * @param string $description The description
+		 */
+		function setDescription($description) {
+			$this->description = $description;
+		}
+
+		/**
+		 * getDescription
+		 *
+		 * Returns the description
+		 *
+		 * @return string The description
+		 */
+		function getDescription() {
+			return $this->description;
+		}
+
+		/**
+		 * setRating
+		 *
+		 * Sets the rating level
+		 *
+		 * @param integer $rating The rating level, one of the available Smax\RATING_*
+		 */
+		function setRating($rating) {
+			$this->rating = $rating;
+		}
+
+		/**
+		 * getRating
+		 *
+		 * Returns the rating
+		 *
+		 * @return integer The rating, one of the available Smax\RATING_*
+		 */
+		function getRating() {
+			return $this->rating;
 		}
 	}
 

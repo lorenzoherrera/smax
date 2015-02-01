@@ -2,23 +2,16 @@
 	/**
 	 * Definitions
 	 *
+	 * SMAX definitions, namings and variables, and SMAX algorithm configuration tables
+	 *
 	 * @package Smax
 	 * @category Main
 	 */
 
 	namespace Smax;
 
-	// Defines and equivalent namings for debugging/testing
 	define("Smax\VERSION", 1);
 	define("Smax\SUBVERSION", 0);
-
-	define("Smax\ATTITUDE_OPTIMISTIC", 0);
-	define("Smax\ATTITUDE_SKEPTICAL", 1);
-
-	$smaxAttitudeNames = array(
-		ATTITUDE_OPTIMISTIC => "Optimistic",
-		ATTITUDE_SKEPTICAL => "Skeptical"
-	);
 
 	define("Smax\RATING_SAFE", 0);
 	define("Smax\RATING_MODERATE", 1);
@@ -68,57 +61,21 @@
 		POWER_HIGH => 1
 	);
 
-	// SMAX Algorithm tables
-	$smaxCertainties = array(
-		ATTITUDE_OPTIMISTIC => array(
-			"contentCreation" => array(
-				"rating" => RATING_SAFE,
-				"certainty" => CERTAINTY_LOW,
-				"power" => POWER_LOW
-			),
-			"ratingOwnContents" => array(
-				"power" => POWER_HIGH,
-				"ratings" => array(
-					RATING_SAFE => CERTAINTY_MEDIUM,
-					RATING_MODERATE => CERTAINTY_HIGH,
-					RATING_ADULT => CERTAINTY_HIGH
-				)
-			),
-			"ratingOthersContents" => array(
-				"power" => POWER_LOW,
-				"ratings" => array(
-					RATING_SAFE => CERTAINTY_HIGH,
-					RATING_MODERATE => CERTAINTY_MEDIUM,
-					RATING_ADULT => CERTAINTY_MEDIUM
-				)
-			)
-		),
-		ATTITUDE_SKEPTICAL => array(
-			"contentCreation" => array(
-				"rating" => RATING_SAFE,
-				"certainty" => CERTAINTY_LOW,
-				"power" => POWER_LOW
-			),
-			"ratingOwnContents" => array(
-				"power" => POWER_MEDIUM,
-				"ratings" => array(
-					RATING_SAFE => CERTAINTY_LOW,
-					RATING_MODERATE => CERTAINTY_MEDIUM,
-					RATING_ADULT => CERTAINTY_MEDIUM
-				)
-			),
-			"ratingOthersContents" => array(
-				"power" => POWER_LOW,
-				"ratings" => array(
-					RATING_SAFE => CERTAINTY_MEDIUM,
-					RATING_MODERATE => CERTAINTY_LOW,
-					RATING_ADULT => CERTAINTY_LOW
-				)
-			)
-		)
-	);
+	define("Smax\RATING_TYPE_DEFAULT", 0);
+	define("Smax\RATING_TYPE_FROM_OWNER", 1);
+	define("Smax\RATING_TYPE_FROM_OTHER", 2);
+	define("Smax\RATING_TYPE_FROM_MODERATOR", 3);
+
+	// Include attitudes
+	include \SMAX_DIR."/attitudes/humanist.inc.php";
+	include \SMAX_DIR."/attitudes/skeptical.inc.php";
 
 	// Include main classes
 	include \SMAX_DIR."/main.class.php";
+	include \SMAX_DIR."/set.class.php";
 	include \SMAX_DIR."/rating.class.php";
+	include \SMAX_DIR."/ratingdefault.class.php";
+	include \SMAX_DIR."/ratingfromowner.class.php";
+	include \SMAX_DIR."/ratingfromother.class.php";
+	include \SMAX_DIR."/ratingfrommoderator.class.php";
 ?>

@@ -3,7 +3,7 @@
 	 * Main
 	 *
 	 * @package Smax
-	 * @category Main
+	 * @category Engine
 	 */
 
 	namespace Smax;
@@ -14,7 +14,7 @@
 	 * A class that provides all basic interactions with SMAX
 	 *
 	 * @package Smax
-	 * @category Main
+	 * @category Engine
 	 */
 	class Main {
 		/**
@@ -39,8 +39,109 @@
 			global $smaxAttitudeNames;
 
 			return array(
-				"Configured attitude" => $smaxAttitudeNames[\SMAX_ATTITUDE]
+				"Default attitude" => Main::getAttitudeName(),
+				"Available attitudes" => implode(" / ", $smaxAttitudeNames)
 			);
+		}
+
+		/**
+		 * getAttitudeName
+		 *
+		 * Returns the attitude name for the given $attitude
+		 *
+		 * @param integer $attitude The attitude, one of the available Smax\ATTITUE_*. Uses the default attitude if omitted
+		 *
+		 * @return string The attitude name
+		 */
+		static function getAttitudeName($attitude = \SMAX_ATTITUDE) {
+			global $smaxAttitudeNames;
+			return $smaxAttitudeNames[$attitude];
+		}
+
+		/**
+		 * getRatingName
+		 *
+		 * Returns the rating name for the given $rating
+		 *
+		 * @param integer $rating The rating, one of the available Smax\RATING_*
+		 *
+		 * @return string The rating name
+		 */
+		static function getRatingName($rating) {
+			global $smaxRatingNames;
+			return $smaxRatingNames[$rating];
+		}
+
+		/**
+		 * getCertaintyName
+		 *
+		 * Returns the certainty name for the given $certainty
+		 *
+		 * @param integer $certainty The certainty, one of the available Smax\CERTAINTY_*
+		 *
+		 * @return string The certainty name
+		 */
+		static function getCertaintyName($certainty) {
+			global $smaxCertaintyNames;
+			return $smaxCertaintyNames[$certainty];
+		}
+
+		/**
+		 * getCertaintyValue
+		 *
+		 * Returns the certainty value for the given $certainty
+		 *
+		 * @param integer $certainty The certainty, one of the available Smax\CERTAINTY_*
+		 *
+		 * @return double The certainty value
+		 */
+		static function getCertaintyValue($certainty) {
+			global $smaxCertaintyValues;
+			return $smaxCertaintyValues[$certainty];
+		}
+
+		/**
+		 * getPowerName
+		 *
+		 * Returns the power name for the given $power
+		 *
+		 * @param integer $power The power, one of the available Smax\POWER_*
+		 *
+		 * @return string The power name
+		 */
+		static function getPowerName($power) {
+			global $smaxPowerNames;
+			return $smaxPowerNames[$power];
+		}
+
+		/**
+		 * getPowerValue
+		 *
+		 * Returns the power value for the given $power
+		 *
+		 * @param integer $power The power, one of the available Smax\POWER_*
+		 *
+		 * @return double The power value
+		 */
+		static function getPowerValue($power) {
+			global $smaxPowerValues;
+			return $smaxPowerValues[$power];
+		}
+
+		/**
+		 * getAlgorithmKey
+		 *
+		 * Returns the algorithm value for the specified key on algorithm table for the given attitude and rating type
+		 *
+		 * @param string $key The algorithm key		 
+		 * @param integer $ratingType The rating type for which to get the algorithm table for the specified attitude, one of the available Smax\RATING_TYPE_*
+		 * @param integer $attitude The attitude to get the algorithm table for, one of the available Smax\ATTITUDE_*		 
+		 *
+		 * @return mixed The algorithm key value
+		*/
+		static function getAlgorithmKey($key, $ratingType, $attitude = \SMAX_ATTITUDE) {
+			global $smaxAlgorithmTables;
+			return $smaxAlgorithmTables[$attitude][$ratingType][$key];
 		}
 	}
 
