@@ -1,0 +1,7 @@
+# Do not track files with sensible information
+lib/smax.config.php
+
+# Annoying files
+.DS_Store
+thumbs.db
+._*
