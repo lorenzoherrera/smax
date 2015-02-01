@@ -24,9 +24,8 @@
 				"description" => "The content is created by a user",
 				"attitude" => Smax\ATTITUDE_OPTIMISTIC,
 				"ratings" => array(
-					new Smax\Rating(array(
-						"timestamp" => $now,
-						"isContentCreation" => true
+					new Smax\RatingDefault(array(
+						"timestamp" => $now
 					))
 				)
 			)

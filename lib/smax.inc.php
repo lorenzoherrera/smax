@@ -1,4 +1,11 @@
 <?
+	/**
+	 * Definitions
+	 *
+	 * @package Smax
+	 * @category Main
+	 */
+
 	namespace Smax;
 
 	// Defines and equivalent namings for debugging/testing
@@ -37,6 +44,12 @@
 		CERTAINTY_ABSOLUTE => "Absolute"
 	);
 
+	$smaxCertaintyValues = array(
+		CERTAINTY_LOW => 1/3,
+		CERTAINTY_MEDIUM => 2/3,
+		CERTAINTY_HIGH => 1
+	);
+
 	define("Smax\POWER_LOW", 0);
 	define("Smax\POWER_MEDIUM", 1);
 	define("Smax\POWER_HIGH", 2);
@@ -47,6 +60,12 @@
 		POWER_MEDIUM => "Medium",
 		POWER_HIGH => "High",
 		POWER_ABSOLUTE => "Absolute"
+	);
+
+	$smaxPowerValues = array(
+		POWER_LOW => 1/3,
+		POWER_MEDIUM => 2/3,
+		POWER_HIGH => 1
 	);
 
 	// SMAX Algorithm tables
