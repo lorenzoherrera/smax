@@ -1,0 +1,3 @@
+<?
+	define("SMAX_ATTITUDE", Smax\ATTITUDE_OPTIMISTIC); // Configure the attitude of the SMAX algorithm, one of the available Smax\MAX_ATTITUDE_* as found in smax.inc.php
+?>

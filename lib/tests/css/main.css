@@ -1,0 +1,42 @@
+body {
+	background: #fff;
+	font-family: "Courier New";
+	font-size: 10pt;
+	color: #222;
+	padding: 20px;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: "Trebuchet MS";
+}
+
+ul.properties {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	border: solid #eee 1px;
+}
+
+ul.properties > li {
+	padding: 0.5em;
+	overflow: hidden;
+	border-bottom: solid #eee 1px;
+}
+
+ul.properties > li:last-child {
+	border-bottom: none;
+}
+
+ul.properties > li:nth-child(even) {
+	background: #fafafa;
+}
+
+ul.properties > li > span:nth-child(1) {
+	font-weight: bold;
+	margin-right: 1em;
+}
+
+ul.properties > li > span:nth-child(2) {
+	float: right;
+}
