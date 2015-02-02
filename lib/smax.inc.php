@@ -25,41 +25,8 @@
 		RATING_EXPLICIT => "Explicit"
 	);
 
-	define("Smax\CERTAINTY_LOW", 0);
-	define("Smax\CERTAINTY_MEDIUM", 1);
-	define("Smax\CERTAINTY_HIGH", 2);
-	define("Smax\CERTAINTY_ABSOLUTE", 3);
-
-	$smaxCertaintyNames = array(
-		CERTAINTY_LOW => "Low",
-		CERTAINTY_MEDIUM => "Medium",
-		CERTAINTY_HIGH => "High",
-		CERTAINTY_ABSOLUTE => "Absolute"
-	);
-
-	$smaxCertaintyValues = array(
-		CERTAINTY_LOW => 1/3,
-		CERTAINTY_MEDIUM => 2/3,
-		CERTAINTY_HIGH => 1
-	);
-
-	define("Smax\POWER_LOW", 0);
-	define("Smax\POWER_MEDIUM", 1);
-	define("Smax\POWER_HIGH", 2);
-	define("Smax\POWER_ABSOLUTE", 3);
-
-	$smaxPowerNames = array(
-		POWER_LOW => "Low",
-		POWER_MEDIUM => "Medium",
-		POWER_HIGH => "High",
-		POWER_ABSOLUTE => "Absolute"
-	);
-
-	$smaxPowerValues = array(
-		POWER_LOW => 1/3,
-		POWER_MEDIUM => 2/3,
-		POWER_HIGH => 1
-	);
+	define("Smax\CERTAINTY_ABSOLUTE", -1);
+	define("Smax\POWER_ABSOLUTE", -1);
 
 	define("Smax\RATING_TYPE_DEFAULT", 0);
 	define("Smax\RATING_TYPE_FROM_OWNER", 1);

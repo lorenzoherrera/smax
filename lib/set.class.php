@@ -75,51 +75,133 @@
 			$this->ratings = $ratings;
 		}
 
+
+		/**
+		 * getFinalRating
+		 *
+		 * Returns the final rating and certainty for the previously set Ratings with the given $attitude.
+		 *
+		 * @param integer $attitude The attitude to use for calculations, one of the available Smax\ATTITUDE_*. Uses the configured attitude if omitted
+		 *
+		 * @return array A hash array with the "rating", "certainty" and "scores" keys, or false if rating couldn't be calculated.
+		 * @throws Exception When final rating could not be calculated
+		 */
+		function getFinalRating($attitude = \SMAX_ATTITUDE) {
+			if (!is_array($this->ratings))
+				throw new \Exception("No ratings");
+
+			if (sizeof($this->ratings) < 1)
+				throw new \Exception("Almost one rating is needed");
+
+			$timestamp = false;
+			$interval = false;
+			$scores = false;
+			foreach ($this->ratings as $rating) {
+				if (!$scores[$rating->getRating()])
+					$scores[$rating->getRating()] = array(
+						"certainty" => $rating->getCertainty(),
+						"score" => 0,
+						"votes" => 0
+					);
+
+				if ($timestamp)
+					$interval = $rating->getTimestamp() - $timestamp;
+				$timestamp = $rating->getTimestamp();
+
+				$scores[$rating->getRating()]["certainty"] = ($scores[$rating->getRating()]["certainty"] + $rating->getCertainty($attitude)) / 2;
+				$scores[$rating->getRating()]["score"] += $rating->getCertainty($attitude) * $rating->getPower($attitude);
+				$scores[$rating->getRating()]["votes"] ++;
+			}
+			reset($this->ratings);
+
+			$highestScore = -1;
+			while (list($rating, $score) = each($scores))
+				if ($score["score"] > $highestScore) {
+					$highestScore = $score["score"];
+					$winningRating = $rating;
+					$winningCertainty = $score["certainty"];
+				}
+			reset($scores);
+
+			return array(
+				"rating" => $winningRating,
+				"certainty" => $winningCertainty,
+				"scores" => $scores
+			);
+		}
+
 		/**
 		 * getDebugInfoHtml
 		 *
 		 * Returns debug information about the set and its ratings
 		 *
+		 * @param string $title An optional title
+		 *
 		 * @return string The debug information in HTML format
 		 */
-		function getDebugInfoHtml() {
-			$r .= "<b>Attitude</b> ".Main::getAttitudeName($this->getAttitude())."<br>\n";
-
+		function getDebugInfoHtml($title = false) {
 			$count = 1;
-			$r .= "<div class=propertiesHorizontalList>";
-			foreach ($this->ratings as $rating) {
-				$r .= "<ul class=properties>\n";
-					$r .=
-						"<li>".
-							"<span>".date("n/j/Y H:i:s", $rating->getTimestamp())."</span>".
-							"<span>#".$count++."</span>".
-						"</li>\n";
-					$r .= "<li><span>".$rating->getDescription()."</span></li>\n";
-					$r .=
-						"<li>".
-							"<span>Rating</span>".
-							"<span>".Main::getRatingName($rating->getRating())."</span>".
-						"</li>\n";
-					$r .=
-						"<li>".
-							"<span>Certainty</span>".
-							"<span>".Main::getCertaintyName($rating->getCertainty($this->getAttitude()))."</span>".
-						"</li>\n";
-					$r .=
-						"<li>".
-							"<span>Power</span>".
-							"<span>".Main::getPowerName($rating->getPower($this->getAttitude()))."</span>".
-						"</li>\n";
-				$r .= "</ul>\n";
-			}
-			$r .= "<ul class=properties>\n";
+			$r .=
+				"<table>\n".
+					($title ? "<tr><th colspan=6>".$title." / ".Main::getAttitudeName($this->getAttitude())." attitude</th></tr>" : "").
+					"<tr>\n".
+						"<th></th>\n".
+						"<th>Timestamp</th>\n".
+						"<th>Description</th>\n".
+						"<th>Rating</th>\n".
+						"<th>Certainty</th>\n".
+						"<th>Power</th>\n".
+					"</tr>\n";
+			foreach ($this->ratings as $rating)
 				$r .=
-					"<li>".
-						"<span>SMAX rating</span>".
-						"<span></span>".
-					"</li>\n";
-			$r .= "</ul>\n";
-			$r .= "</div>";
+					"<tr>\n".
+						"<td>".$count++."</td>\n".
+						"<td>".date("n/j/Y H:i:s", $rating->getTimestamp())."</td>\n".
+						"<td>".$rating->getDescription()."</td>\n".
+						"<td>".Main::getRatingName($rating->getRating())."</td>\n".
+						"<td>".($rating->getCertainty($this->getAttitude()) == CERTAINTY_ABSOLUTE ? "Absolute" : number_format($rating->getCertainty($this->getAttitude()), 2, ".", ","))."</td>\n".
+						"<td>".($rating->getPower($this->getAttitude()) == POWER_ABSOLUTE ? "Absolute" : number_format($rating->getPower($this->getAttitude()), 2, ".", ","))."</td>\n".
+					"</tr>\n";
+			reset($this->ratings);
+
+			try {
+				$finalRating = $this->getFinalRating();
+			} catch (\Exception $e) {
+				$r .= "</table>".$e->getMessage()."\n";
+				return $r;
+			}
+
+			$r .=
+				"<tr>\n".
+					"<th colspan=2></th>\n".
+					"<th>Results</th>\n".
+					"<th>Votes</th>\n".
+					"<th>Certainty</th>\n".
+					"<th>Score</th>\n".
+				"</tr>\n";
+
+			while (list($rating, $score) = each($finalRating["scores"]))
+				$r .=
+					"<tr>\n".
+						"<td colspan=2></td>\n".
+						"<td>".Main::getRatingName($rating)."</td>\n".
+						"<td>".$score["votes"]."</td>\n".
+						"<td>".number_format($score["certainty"], 2, ".", ",")."</td>\n".
+						"<td>".number_format($score["score"], 2, ".", ",")."</td>\n".
+					"</tr>\n";
+
+			$r .=
+				"<tr>\n".
+					"<th colspan=2></th>\n".
+					"<th colspan=4>Final SMAX rating</th>\n".
+				"</tr>\n".
+				"<tr>\n".
+					"<td colspan=2></td>\n".
+					"<td><b>".Main::getRatingName($finalRating["rating"])."</b> with a certainty of ".number_format($finalRating["certainty"], 2, ".", ",")."</td>\n".
+				"</tr>\n";
+
+			$r .= "</table>\n";
+
 			return $r;
 		}
 	}

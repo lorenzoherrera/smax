@@ -25,23 +25,23 @@
 	$smaxAlgorithmTables[ATTITUDE_SKEPTICAL] = array(
 		RATING_TYPE_DEFAULT => array(
 			"rating" => RATING_SAFE,
-			"certainty" => CERTAINTY_LOW,
-			"power" => POWER_LOW
+			"certainty" => 1/3,
+			"power" => 1/3
 		),
 		RATING_TYPE_FROM_OWNER => array(
-			"power" => POWER_MEDIUM,
+			"power" => 2/3,
 			"certaintyTable" => array(
-				RATING_SAFE => CERTAINTY_LOW,
-				RATING_MODERATE => CERTAINTY_MEDIUM,
-				RATING_ADULT => CERTAINTY_MEDIUM
+				RATING_SAFE => 1/3,
+				RATING_MODERATE => 2/3,
+				RATING_ADULT => 2/3
 			)
 		),
 		RATING_TYPE_FROM_OTHER => array(
-			"power" => POWER_LOW,
+			"power" => 1/3,
 			"certaintyTable" => array(
-				RATING_SAFE => CERTAINTY_MEDIUM,
-				RATING_MODERATE => CERTAINTY_LOW,
-				RATING_ADULT => CERTAINTY_LOW
+				RATING_SAFE => 2/3,
+				RATING_MODERATE => 1/3,
+				RATING_ADULT => 1/3
 			)
 		),
 		RATING_TYPE_FROM_MODERATOR => array(

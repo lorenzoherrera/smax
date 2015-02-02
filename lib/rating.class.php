@@ -28,11 +28,6 @@
 		private $rating;
 
 		/**
-		 * @var string $description A description, mainly for debugging uses
-		 */
-		private $description;
-
-		/**
 		 * __construct
 		 *
 		 * Constructs a Rating object with the given $setup specification
@@ -70,26 +65,13 @@
 		}
 
 		/**
-		 * setDescription
-		 *
-		 * Sets the description
-		 *
-		 * @param string $description The description
-		 */
-		function setDescription($description) {
-			$this->description = $description;
-		}
-
-		/**
 		 * getDescription
 		 *
-		 * Returns the description
+		 * Returns a description for this rating
 		 *
 		 * @return string The description
 		 */
-		function getDescription() {
-			return $this->description;
-		}
+		function getDescription() {}
 
 		/**
 		 * setRating

@@ -73,62 +73,6 @@
 		}
 
 		/**
-		 * getCertaintyName
-		 *
-		 * Returns the certainty name for the given $certainty
-		 *
-		 * @param integer $certainty The certainty, one of the available Smax\CERTAINTY_*
-		 *
-		 * @return string The certainty name
-		 */
-		static function getCertaintyName($certainty) {
-			global $smaxCertaintyNames;
-			return $smaxCertaintyNames[$certainty];
-		}
-
-		/**
-		 * getCertaintyValue
-		 *
-		 * Returns the certainty value for the given $certainty
-		 *
-		 * @param integer $certainty The certainty, one of the available Smax\CERTAINTY_*
-		 *
-		 * @return double The certainty value
-		 */
-		static function getCertaintyValue($certainty) {
-			global $smaxCertaintyValues;
-			return $smaxCertaintyValues[$certainty];
-		}
-
-		/**
-		 * getPowerName
-		 *
-		 * Returns the power name for the given $power
-		 *
-		 * @param integer $power The power, one of the available Smax\POWER_*
-		 *
-		 * @return string The power name
-		 */
-		static function getPowerName($power) {
-			global $smaxPowerNames;
-			return $smaxPowerNames[$power];
-		}
-
-		/**
-		 * getPowerValue
-		 *
-		 * Returns the power value for the given $power
-		 *
-		 * @param integer $power The power, one of the available Smax\POWER_*
-		 *
-		 * @return double The power value
-		 */
-		static function getPowerValue($power) {
-			global $smaxPowerValues;
-			return $smaxPowerValues[$power];
-		}
-
-		/**
 		 * getAlgorithmKey
 		 *
 		 * Returns the algorithm value for the specified key on algorithm table for the given attitude and rating type

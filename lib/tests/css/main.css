@@ -66,3 +66,23 @@ ul.properties > li > span:nth-child(2) {
 	margin: 10px 5px 0 0;
 	width: 15%;
 }
+
+table {
+	font-size: 1em;
+	border-spacing: 0;
+}
+
+table tr {
+}
+
+table th {
+	text-align: left;
+	background: #f4f4f4;
+	font-family: "Trebuchet MS", Arial;
+}
+
+table td,
+table th {
+	padding: 0.45em 0.6em;
+	margin: 0;
+}

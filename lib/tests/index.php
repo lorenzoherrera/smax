@@ -31,72 +31,67 @@
 	$secondsIntervalBetweenSteps = 60;
 
 	// Simple humanist
-	echo "<h2>Simple</h2>\n";
 	$set = new Smax\Set(array(
 		new Smax\RatingDefault(array(
-			"description" => "The content is created",
 			"timestamp" => $now,
 			"attitude" => Smax\ATTITUDE_HUMANIST
 		)),
 		new Smax\RatingFromOwner(array(
-			"description" => "The content receives a rating from its owner",
 			"timestamp" => $now+=$secondsIntervalBetweenSteps,
 			"rating" => Smax\RATING_SAFE
 		)),
 		new Smax\RatingFromOther(array(
-			"description" => "The content receives a rating from another user",
 			"timestamp" => $now+=$secondsIntervalBetweenSteps,
 			"rating" => Smax\RATING_MODERATE
-		))
+		)),
+		new Smax\RatingFromOther(array(
+			"timestamp" => $now+=$secondsIntervalBetweenSteps,
+			"rating" => Smax\RATING_MODERATE
+		)),
+		new Smax\RatingFromOther(array(
+			"timestamp" => $now+=$secondsIntervalBetweenSteps,
+			"rating" => Smax\RATING_MODERATE
+		)),
 	), Smax\ATTITUDE_HUMANIST);
-	echo $set->getDebugInfoHtml();
+	echo $set->getDebugInfoHtml("Simple");
 
 	// Simple skeptical
-	echo "<h2>Simple skeptical</h2>\n";
 	$set = new Smax\Set(array(
 		new Smax\RatingDefault(array(
-			"description" => "The content is created",
 			"timestamp" => $now,
 			"attitude" => Smax\ATTITUDE_SKEPTICAL
 		)),
 		new Smax\RatingFromOwner(array(
-			"description" => "The content receives a rating from its owner",
 			"timestamp" => $now+=$secondsIntervalBetweenSteps,
 			"rating" => Smax\RATING_SAFE
 		)),
 		new Smax\RatingFromOther(array(
-			"description" => "The content receives a rating from another user",
 			"timestamp" => $now+=$secondsIntervalBetweenSteps,
 			"rating" => Smax\RATING_MODERATE
 		))
 	), Smax\ATTITUDE_SKEPTICAL);
-	echo $set->getDebugInfoHtml();
+	echo $set->getDebugInfoHtml("Simple");
 
 	// Simple moderated
-	echo "<h2>Simple moderated</h2>\n";
 	$set = new Smax\Set(array(
 		new Smax\RatingDefault(array(
-			"description" => "The content is created",
 			"timestamp" => $now,
 			"attitude" => Smax\ATTITUDE_HUMANIST
 		)),
 		new Smax\RatingFromOwner(array(
-			"description" => "The content receives a rating from its owner",
 			"timestamp" => $now+=$secondsIntervalBetweenSteps,
 			"rating" => Smax\RATING_MODERATE
 		)),
 		new Smax\RatingFromOther(array(
-			"description" => "The content receives a rating from another user",
 			"timestamp" => $now+=$secondsIntervalBetweenSteps,
 			"rating" => Smax\RATING_MODERATE
 		)),
 		new Smax\RatingFromModerator(array(
-			"description" => "The content receives a rating from the moderator",
 			"timestamp" => $now+=$secondsIntervalBetweenSteps,
 			"rating" => Smax\RATING_MODERATE
 		))
 	), Smax\ATTITUDE_HUMANIST);
-	echo $set->getDebugInfoHtml();
+	echo $set->getDebugInfoHtml("Simple moderated");
 
 ?></body>
 </html>

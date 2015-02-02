@@ -33,11 +33,22 @@
 		}
 
 		/**
+		 * getDescription
+		 *
+		 * Returns a description for this rating
+		 *
+		 * @return string The description
+		 */
+		function getDescription() {
+			return "Rating added when the content is created";
+		}
+
+		/**
 		 * getCertainty
 		 *
 		 * @param integer $attitude The algorithm attitude to use, one of the available Smax\ATTITUDE_*. Uses the configured attitude if omitted
 		 *
-		 * @return integer The certainty, one of the available Smax\CERTAINTY_*
+		 * @return double The certainty
 		 */
 		function getCertainty($attitude = \SMAX_ATTITUDE) {
 			return \Smax\Main::getAlgorithmKey("certainty", \Smax\RATING_TYPE_DEFAULT, $attitude);
@@ -48,7 +59,7 @@
 		 *
 		 * @param integer $attitude The algorithm attitude to use, one of the available Smax\ATTITUDE_*. Uses the configured attitude if omitted
 		 *
-		 * @return integer The power, one of the available Smax\POWER_*
+		 * @return double The power
 		 */
 		function getPower($attitude = \SMAX_ATTITUDE) {
 			return \Smax\Main::getAlgorithmKey("power", \Smax\RATING_TYPE_DEFAULT, $attitude);
