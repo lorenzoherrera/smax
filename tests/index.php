@@ -10,7 +10,7 @@
 ?><html>
 <head>
 	<title>SMAX tests</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body><?
 
