@@ -1,2 +1,2 @@
-# Smax
-Content maturity rating method for artistic web social communities
+# SMAX
+Content maturity rating method for artistic social communities
