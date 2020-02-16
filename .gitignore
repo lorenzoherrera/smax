@@ -1,5 +1,6 @@
-# Do not track files with sensible information
-lib/smax.config.php
+# Composer
+composer.lock
+vendor/*
 
 # Annoying files
 .DS_Store
