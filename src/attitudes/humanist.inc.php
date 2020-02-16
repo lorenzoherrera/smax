@@ -38,7 +38,8 @@
 			"certaintyTable" => [
 				RATING_SAFE => 2/3,
 				RATING_MODERATE => 3/3,
-				RATING_ADULT => 3/3
+				RATING_ADULT => 3/3,
+				RATING_EXPLICIT => 3/3
 			]
 		],
 		RATING_TYPE_FROM_OTHER => [
@@ -46,7 +47,8 @@
 			"certaintyTable" => [
 				RATING_SAFE => 3/3,
 				RATING_MODERATE => 2/3,
-				RATING_ADULT => 2/3
+				RATING_ADULT => 2/3,
+				RATING_EXPLICIT => 2/3
 			]
 		],
 		RATING_TYPE_FROM_MODERATOR => [
@@ -54,7 +56,8 @@
 			"certaintyTable" => [
 				RATING_SAFE => CERTAINTY_ABSOLUTE,
 				RATING_MODERATE => CERTAINTY_ABSOLUTE,
-				RATING_ADULT => CERTAINTY_ABSOLUTE
+				RATING_ADULT => CERTAINTY_ABSOLUTE,
+				RATING_EXPLICIT => CERTAINTY_ABSOLUTE
 			]
 		]
 	];

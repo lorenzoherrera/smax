@@ -11,7 +11,7 @@
 	 * @package Smax
 	 * @category Engine
 	 */
-	class RatingFromModerator extends \Smax\Rating {
+	class RatingFromModerator extends Rating {
 		/**
 		 * Constructs the object with the given $setup specification
 		 * @param array $setup A key-value array containing the specification
@@ -37,7 +37,7 @@
 		 * @return double The certainty
 		 */
 		function getCertainty($attitude = ATTITUDE_DEFAULT) {
-			$certaintyTable = \Smax\Main::getAlgorithmKey("certaintyTable", \Smax\RATING_TYPE_FROM_MODERATOR, $attitude);
+			$certaintyTable = Main::getAlgorithmKey("certaintyTable", RATING_TYPE_FROM_MODERATOR, $attitude);
 			return $certaintyTable[$this->getRating()];
 		}
 
@@ -46,7 +46,7 @@
 		 * @return double The power
 		 */
 		function getPower($attitude = ATTITUDE_DEFAULT) {
-			return \Smax\Main::getAlgorithmKey("power", \Smax\RATING_TYPE_FROM_MODERATOR, $attitude);
+			return Main::getAlgorithmKey("power", RATING_TYPE_FROM_MODERATOR, $attitude);
 		}
 	}
 

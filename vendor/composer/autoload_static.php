@@ -10,6 +10,7 @@ class ComposerStaticInit6f7c60d43beeac5aa306701fb5fa721f
         '717feddebcd4b023c0f13ee2d7d01e24' => __DIR__ . '/../..' . '/src/smax.inc.php',
         '6676c30f3f7b8a5f23993ca53c161d28' => __DIR__ . '/../..' . '/src/attitudes/humanist.inc.php',
         '890e0477ed4cd8e3996524d9b4947bbd' => __DIR__ . '/../..' . '/src/attitudes/skeptical.inc.php',
+        '177e2bbc08135eb7f32d29475bbf3d4a' => __DIR__ . '/../..' . '/src/defaults.inc.php',
     );
 
     public static $classMap = array (

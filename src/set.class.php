@@ -93,12 +93,18 @@
 			reset($this->ratings);
 
 			$highestScore = -1;
-			foreach ($scores as $rating => $score)
+			foreach ($scores as $rating => $score) {
+				if ($score["certainty"] < 0) { // A negative certainty means absolute certainty
+					$winningRating = $rating;
+					$winningCertainty = 1;
+					break;
+				}
 				if ($score["score"] > $highestScore) {
 					$highestScore = $score["score"];
 					$winningRating = $rating;
 					$winningCertainty = $score["certainty"];
 				}
+			}
 			reset($scores);
 
 			return [
@@ -160,7 +166,7 @@
 						"<td colspan=2></td>\n".
 						"<td>".Main::getRatingName($rating)."</td>\n".
 						"<td>".$score["votes"]."</td>\n".
-						"<td>".number_format($score["certainty"], 2, ".", ",")."</td>\n".
+						"<td>".($score["certainty"] < 0 ? "Absolute" : number_format($score["certainty"], 2, ".", ","))."</td>\n".
 						"<td>".number_format($score["score"], 2, ".", ",")."</td>\n".
 					"</tr>\n";
 

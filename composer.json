@@ -18,7 +18,8 @@
 		"files": [
 			"src/smax.inc.php",
 			"src/attitudes/humanist.inc.php",
-			"src/attitudes/skeptical.inc.php"
+			"src/attitudes/skeptical.inc.php",
+			"src/defaults.inc.php"
 		]
 	}
 }

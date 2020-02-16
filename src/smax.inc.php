@@ -15,6 +15,7 @@
 	const RATING_ADULT = 2;
 	const RATING_EXPLICIT = 3;
 
+	global $smaxRatingNames;
 	$smaxRatingNames = [
 		RATING_SAFE => "Safe",
 		RATING_MODERATE => "Moderate",
@@ -29,6 +30,4 @@
 	const RATING_TYPE_FROM_OWNER = 1;
 	const RATING_TYPE_FROM_OTHER = 2;
 	const RATING_TYPE_FROM_MODERATOR = 3;
-
-	const ATTITUDE_DEFAULT = ATTITUDE_HUMANIST;
 ?>

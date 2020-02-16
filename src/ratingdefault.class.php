@@ -11,7 +11,7 @@
 	 * @package Smax
 	 * @category Engine
 	 */
-	class RatingDefault extends \Smax\Rating {
+	class RatingDefault extends Rating {
 		/**
 		 * Constructs the object with the given $setup specification
 		 * @param array $setup A key-value array containing the specification
@@ -20,7 +20,7 @@
 		function __construct($setup) {
 			if (!parent::__construct($setup))
 				return false;
-			$this->setRating(\Smax\Main::getAlgorithmKey("rating", RATING_TYPE_DEFAULT, $setup["attitude"]));
+			$this->setRating(Main::getAlgorithmKey("rating", RATING_TYPE_DEFAULT, $setup["attitude"]));
 			return true;
 		}
 
