@@ -1,4 +1,4 @@
-<?
+<?php
 
 	/**
 	 * Skeptical attitude (SMAX-S)

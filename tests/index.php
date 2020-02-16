@@ -1,4 +1,4 @@
-<?
+<?php
 	/**
 	 * Tests
 	 *
@@ -12,7 +12,7 @@
 	<title>SMAX tests</title>
 	<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
-<body><?
+<body><?php
 
 	define("SMAX_DIR", ".."); // Must contain the path to SMAX lib directory
 	include \SMAX_DIR."/smax.inc.php"; // Include SMAX definitions

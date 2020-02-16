@@ -1,4 +1,4 @@
-<?
+<?php
 	/**
 	 * @package Smax
 	 * @category Engine
