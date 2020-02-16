@@ -26,7 +26,6 @@
 		 */
 		static function getConfigInfo() {
 			global $smaxAttitudeNames;
-
 			return array(
 				"Default attitude" => Main::getAttitudeName(),
 				"Available attitudes" => implode(" / ", $smaxAttitudeNames)

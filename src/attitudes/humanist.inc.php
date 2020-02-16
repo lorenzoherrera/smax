@@ -18,12 +18,15 @@
 	 * @category Attitudes
 	 */
 
-	namespace Smax\Attitudes;
+	namespace Smax;
 
-	define("ATTITUDE_HUMANIST", 0);
+	const ATTITUDE_HUMANIST = 0;
 
+	global $smaxAttitudeNames;
+	global $smaxAlgorithmTables;
+	
 	$smaxAttitudeNames[ATTITUDE_HUMANIST] = "Humanist";
-
+	
 	$smaxAlgorithmTables[ATTITUDE_HUMANIST] = array(
 		RATING_TYPE_DEFAULT => array(
 			"rating" => RATING_SAFE,

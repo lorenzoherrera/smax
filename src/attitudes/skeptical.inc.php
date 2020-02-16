@@ -16,10 +16,13 @@
 	 * @category Attitudes
 	 */
 
-	namespace Smax\Attitudes;
+	namespace Smax;
 
-	define("ATTITUDE_SKEPTICAL", 1);
+	const ATTITUDE_SKEPTICAL = 1;
 
+	global $smaxAttitudeNames;
+	global $smaxAlgorithmTables;
+	
 	$smaxAttitudeNames[ATTITUDE_SKEPTICAL] = "Skeptical";
 
 	$smaxAlgorithmTables[ATTITUDE_SKEPTICAL] = array(

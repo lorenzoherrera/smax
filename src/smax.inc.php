@@ -7,13 +7,13 @@
 
 	namespace Smax;
 
-	define("VERSION", 1);
-	define("SUBVERSION", 0);
+	const VERSION = 1;
+	const SUBVERSION = 0;
 
-	define("RATING_SAFE", 0);
-	define("RATING_MODERATE", 1);
-	define("RATING_ADULT", 2);
-	define("RATING_EXPLICIT", 3);
+	const RATING_SAFE = 0;
+	const RATING_MODERATE = 1;
+	const RATING_ADULT = 2;
+	const RATING_EXPLICIT = 3;
 
 	$smaxRatingNames = array(
 		RATING_SAFE => "Safe",
@@ -22,13 +22,13 @@
 		RATING_EXPLICIT => "Explicit"
 	);
 
-	define("CERTAINTY_ABSOLUTE", -1);
-	define("POWER_ABSOLUTE", -1);
+	const CERTAINTY_ABSOLUTE = -1;
+	const POWER_ABSOLUTE = -1;
 
-	define("RATING_TYPE_DEFAULT", 0);
-	define("RATING_TYPE_FROM_OWNER", 1);
-	define("RATING_TYPE_FROM_OTHER", 2);
-	define("RATING_TYPE_FROM_MODERATOR", 3);
+	const RATING_TYPE_DEFAULT = 0;
+	const RATING_TYPE_FROM_OWNER = 1;
+	const RATING_TYPE_FROM_OTHER = 2;
+	const RATING_TYPE_FROM_MODERATOR = 3;
 
-	define("ATTITUDE_DEFAULT", ATTITUDE_HUMANIST);
+	const ATTITUDE_DEFAULT = ATTITUDE_HUMANIST;
 ?>
