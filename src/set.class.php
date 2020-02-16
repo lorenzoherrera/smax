@@ -76,11 +76,11 @@
 			$scores = false;
 			foreach ($this->ratings as $rating) {
 				if (!$scores[$rating->getRating()])
-					$scores[$rating->getRating()] = array(
+					$scores[$rating->getRating()] = [
 						"certainty" => $rating->getCertainty(),
 						"score" => 0,
 						"votes" => 0
-					);
+					];
 
 				if ($timestamp)
 					$interval = $rating->getTimestamp() - $timestamp;
@@ -101,11 +101,11 @@
 				}
 			reset($scores);
 
-			return array(
+			return [
 				"rating" => $winningRating,
 				"certainty" => $winningCertainty,
 				"scores" => $scores
-			);
+			];
 		}
 
 		/**

@@ -15,12 +15,12 @@
 	const RATING_ADULT = 2;
 	const RATING_EXPLICIT = 3;
 
-	$smaxRatingNames = array(
+	$smaxRatingNames = [
 		RATING_SAFE => "Safe",
 		RATING_MODERATE => "Moderate",
 		RATING_ADULT => "Adult",
 		RATING_EXPLICIT => "Explicit"
-	);
+	];
 
 	const CERTAINTY_ABSOLUTE = -1;
 	const POWER_ABSOLUTE = -1;

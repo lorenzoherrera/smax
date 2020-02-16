@@ -26,10 +26,10 @@
 		 */
 		static function getConfigInfo() {
 			global $smaxAttitudeNames;
-			return array(
+			return [
 				"Default attitude" => Main::getAttitudeName(),
 				"Available attitudes" => implode(" / ", $smaxAttitudeNames)
-			);
+			];
 		}
 
 		/**

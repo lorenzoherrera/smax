@@ -25,36 +25,36 @@
 	
 	$smaxAttitudeNames[ATTITUDE_SKEPTICAL] = "Skeptical";
 
-	$smaxAlgorithmTables[ATTITUDE_SKEPTICAL] = array(
-		RATING_TYPE_DEFAULT => array(
+	$smaxAlgorithmTables[ATTITUDE_SKEPTICAL] = [
+		RATING_TYPE_DEFAULT => [
 			"rating" => RATING_SAFE,
 			"certainty" => 1/3,
 			"power" => 1/3
-		),
-		RATING_TYPE_FROM_OWNER => array(
+		],
+		RATING_TYPE_FROM_OWNER => [
 			"power" => 2/3,
-			"certaintyTable" => array(
+			"certaintyTable" => [
 				RATING_SAFE => 1/3,
 				RATING_MODERATE => 2/3,
 				RATING_ADULT => 2/3
-			)
-		),
-		RATING_TYPE_FROM_OTHER => array(
+			]
+		],
+		RATING_TYPE_FROM_OTHER => [
 			"power" => 1/3,
-			"certaintyTable" => array(
+			"certaintyTable" => [
 				RATING_SAFE => 2/3,
 				RATING_MODERATE => 1/3,
 				RATING_ADULT => 1/3
-			)
-		),
-		RATING_TYPE_FROM_MODERATOR => array(
+			]
+		],
+		RATING_TYPE_FROM_MODERATOR => [
 			"power" => POWER_ABSOLUTE,
-			"certaintyTable" => array(
+			"certaintyTable" => [
 				RATING_SAFE => CERTAINTY_ABSOLUTE,
 				RATING_MODERATE => CERTAINTY_ABSOLUTE,
 				RATING_ADULT => CERTAINTY_ABSOLUTE
-			)
-		)
-	);
+			]
+		]
+	];
 
 ?>
