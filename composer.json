@@ -1,0 +1,16 @@
+{
+	"name": "tin-cat/smax",
+    "type": "library",
+    "description": "Content maturity rating method for artistic web social communities",
+    "keywords": ["maturity","algorithm","classification","rating"],
+    "homepage": "https://github.com/tin-cat/smax",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lorenzo Herrera",
+            "email": "loren@tin.cat",
+            "homepage": "http://tin.cat",
+            "role": "Developer"
+        }
+    ]
+}
