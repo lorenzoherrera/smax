@@ -1,9 +1,6 @@
 <?
 	/**
-	 * Definitions
-	 *
 	 * SMAX definitions, namings and variables, and SMAX algorithm configuration tables
-	 *
 	 * @package Smax
 	 * @category Main
 	 */

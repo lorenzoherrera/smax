@@ -1,9 +1,6 @@
 <?
 	/**
-	 * Configuration
-	 *
 	 * SMAX local configuration, intended to be copied from smax.config.php.example to smax.config.php and customized
-	 *
 	 * @package Smax
 	 * @category Main
 	 */

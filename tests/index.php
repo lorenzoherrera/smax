@@ -16,7 +16,7 @@
 
 	define("SMAX_DIR", ".."); // Must contain the path to SMAX lib directory
 	include \SMAX_DIR."/smax.inc.php"; // Include SMAX definitions
-	include \SMAX_DIR."/smax.config.php"; // Include your desired SMAX configuration, copied from lib/smax.config.php.example
+	include \SMAX_DIR."/smax.config.php"; // Include your desired SMAX configuration
 
 	echo "<h1>".Smax\Main::getVersionInfo()." tests</h1>";
 

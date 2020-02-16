@@ -1,7 +1,5 @@
 <?
 	/**
-	 * Rating
-	 *
 	 * @package Smax
 	 * @category Engine
 	 */
@@ -9,10 +7,7 @@
 	namespace Smax;
 
 	/**
-	 * Rating
-	 *
 	 * A class that represents an obtained single rating about a content
-	 *
 	 * @package Smax
 	 * @category Engine
 	 */
@@ -28,10 +23,7 @@
 		private $rating;
 
 		/**
-		 * __construct
-		 *
 		 * Constructs a Rating object with the given $setup specification
-		 *
 		 * @param array $setup A key-value array containing the specification
 		 * @return boolean True when constrution was done without errors, false otherwise
 		 */
@@ -43,10 +35,7 @@
 		}
 
 		/**
-		 * setTimestamp
-		 *
 		 * Sets the timestamp when the Rating was received 
-		 *
 		 * @param integer $timestamp Timestamp
 		 */
 		function setTimestamp($timestamp) {
@@ -54,10 +43,7 @@
 		}
 
 		/**
-		 * getTimestamp
-		 *
 		 * Returns the timestamp
-		 *
 		 * @return integer The timestamp
 		 */
 		function getTimestamp() {
@@ -65,19 +51,13 @@
 		}
 
 		/**
-		 * getDescription
-		 *
 		 * Returns a description for this rating
-		 *
 		 * @return string The description
 		 */
 		function getDescription() {}
 
 		/**
-		 * setRating
-		 *
 		 * Sets the rating level
-		 *
 		 * @param integer $rating The rating level, one of the available Smax\RATING_*
 		 */
 		function setRating($rating) {
@@ -85,10 +65,7 @@
 		}
 
 		/**
-		 * getRating
-		 *
 		 * Returns the rating
-		 *
 		 * @return integer The rating, one of the available Smax\RATING_*
 		 */
 		function getRating() {

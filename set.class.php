@@ -1,7 +1,5 @@
 <?
 	/**
-	 * Set
-	 *
 	 * @package Smax
 	 * @category Engine
 	 */
@@ -9,10 +7,7 @@
 	namespace Smax;
 
 	/**
-	 * Set
-	 *
 	 * A class that represents a set of Ratings received by a content, usually to be used to consider various Ratings and obtain a final rating evaluation using the SMAX algorithm
-	 *
 	 * @package Smax
 	 * @category Main
 	 */
@@ -28,13 +23,9 @@
 		private $ratings;
 
 		/**
-		 * __construct
-		 *
 		 * Constructs a Set object with the given $ratings with the specified 
-		 *
 		 * @param array $ratings The ratings received by a content, in chronological order
 		 * @param integer $attitude The attitude to use for the algorithm, one of the available Smax\ATTITUDE_*. Uses the configured attitude if omitted
-		 *
 		 * @return boolean True when constrution was done without errors, false otherwise
 		 */
 		function __construct($ratings, $attitude = \SMAX_ATTITUDE) {
@@ -43,10 +34,7 @@
 		}
 
 		/**
-		 * setAttitude
-		 *
 		 * Sets the attitude
-		 *
 		 * @param integer $attitude The attitude, one of the available Smax\ATTITUDE_*
 		 */
 		function setAttitude($attitude) {
@@ -54,10 +42,7 @@
 		}
 
 		/**
-		 * getAttitude
-		 *
 		 * Returns the attitude
-		 *
 		 * @return integer The attitude, one of the available Smax\ATTITUDE_*
 		 */
 		function getAttitude() {
@@ -65,10 +50,7 @@
 		}
 
 		/**
-		 * setRatings
-		 *
 		 * Sets the ratings received by the object
-		 *
 		 * @param array $ratings A Ratings array in chronological order
 		 */
 		function setRatings($ratings) {
@@ -77,12 +59,8 @@
 
 
 		/**
-		 * getFinalRating
-		 *
 		 * Returns the final rating and certainty for the previously set Ratings with the given $attitude.
-		 *
 		 * @param integer $attitude The attitude to use for calculations, one of the available Smax\ATTITUDE_*. Uses the configured attitude if omitted
-		 *
 		 * @return array A hash array with the "rating", "certainty" and "scores" keys, or false if rating couldn't be calculated.
 		 * @throws Exception When final rating could not be calculated
 		 */
@@ -131,12 +109,8 @@
 		}
 
 		/**
-		 * getDebugInfoHtml
-		 *
 		 * Returns debug information about the set and its ratings
-		 *
 		 * @param string $title An optional title
-		 *
 		 * @return string The debug information in HTML format
 		 */
 		function getDebugInfoHtml($title = false) {
