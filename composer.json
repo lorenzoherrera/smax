@@ -1,7 +1,7 @@
 {
 	"name": "tin-cat/smax",
     "type": "library",
-    "description": "Content maturity rating method for artistic web social communities",
+    "description": "Content maturity rating method for social communities",
     "keywords": ["maturity","algorithm","classification","rating"],
     "homepage": "https://github.com/tin-cat/smax",
     "license": "MIT",
