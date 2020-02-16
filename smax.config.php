@@ -5,5 +5,7 @@
 	 * @category Main
 	 */
 
-	define("SMAX_ATTITUDE", Smax\ATTITUDE_HUMANIST); // Configure the attitude of the SMAX algorithm, one of the available Smax\MAX_ATTITUDE_* as found in smax.inc.php
+	namespace Smax;
+
+	define("SMAX_ATTITUDE", ATTITUDE_HUMANIST); // Configure the attitude of the SMAX algorithm, one of the available Smax\MAX_ATTITUDE_* as found in smax.inc.php
 ?>

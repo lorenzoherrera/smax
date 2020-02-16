@@ -93,7 +93,7 @@
 			reset($this->ratings);
 
 			$highestScore = -1;
-			while (list($rating, $score) = each($scores))
+			foreach ($scores as $rating => $score)
 				if ($score["score"] > $highestScore) {
 					$highestScore = $score["score"];
 					$winningRating = $rating;
@@ -154,7 +154,7 @@
 					"<th>Score</th>\n".
 				"</tr>\n";
 
-			while (list($rating, $score) = each($finalRating["scores"]))
+			foreach ($finalRating["scores"] as $rating => $score)
 				$r .=
 					"<tr>\n".
 						"<td colspan=2></td>\n".

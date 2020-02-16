@@ -16,9 +16,9 @@
 	 * @category Attitudes
 	 */
 
-	namespace Smax;
+	namespace Smax\Attitudes;
 
-	define("Smax\ATTITUDE_SKEPTICAL", 1);
+	define("ATTITUDE_SKEPTICAL", 1);
 
 	$smaxAttitudeNames[ATTITUDE_SKEPTICAL] = "Skeptical";
 

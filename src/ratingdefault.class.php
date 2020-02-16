@@ -20,7 +20,7 @@
 		function __construct($setup) {
 			if (!parent::__construct($setup))
 				return false;
-			$this->setRating(\Smax\Main::getAlgorithmKey("rating", \Smax\RATING_TYPE_DEFAULT, $setup["attitude"]));
+			$this->setRating(\Smax\Main::getAlgorithmKey("rating", RATING_TYPE_DEFAULT, $setup["attitude"]));
 			return true;
 		}
 
@@ -37,7 +37,7 @@
 		 * @return double The certainty
 		 */
 		function getCertainty($attitude = \SMAX_ATTITUDE) {
-			return \Smax\Main::getAlgorithmKey("certainty", \Smax\RATING_TYPE_DEFAULT, $attitude);
+			return Main::getAlgorithmKey("certainty", RATING_TYPE_DEFAULT, $attitude);
 		}
 
 		/**
@@ -45,7 +45,7 @@
 		 * @return double The power
 		 */
 		function getPower($attitude = \SMAX_ATTITUDE) {
-			return \Smax\Main::getAlgorithmKey("power", \Smax\RATING_TYPE_DEFAULT, $attitude);
+			return Main::getAlgorithmKey("power", RATING_TYPE_DEFAULT, $attitude);
 		}
 	}
 

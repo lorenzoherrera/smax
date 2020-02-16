@@ -18,9 +18,9 @@
 	 * @category Attitudes
 	 */
 
-	namespace Smax;
+	namespace Smax\Attitudes;
 
-	define("Smax\ATTITUDE_HUMANIST", 0);
+	define("ATTITUDE_HUMANIST", 0);
 
 	$smaxAttitudeNames[ATTITUDE_HUMANIST] = "Humanist";
 
