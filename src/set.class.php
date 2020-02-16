@@ -28,7 +28,7 @@
 		 * @param integer $attitude The attitude to use for the algorithm, one of the available Smax\ATTITUDE_*. Uses the configured attitude if omitted
 		 * @return boolean True when constrution was done without errors, false otherwise
 		 */
-		function __construct($ratings, $attitude = \SMAX_ATTITUDE) {
+		function __construct($ratings, $attitude = ATTITUDE_DEFAULT) {
 			$this->setAttitude($attitude);
 			$this->setRatings($ratings);
 		}
@@ -64,7 +64,7 @@
 		 * @return array A hash array with the "rating", "certainty" and "scores" keys, or false if rating couldn't be calculated.
 		 * @throws Exception When final rating could not be calculated
 		 */
-		function getFinalRating($attitude = \SMAX_ATTITUDE) {
+		function getFinalRating($attitude = ATTITUDE_DEFAULT) {
 			if (!is_array($this->ratings))
 				throw new \Exception("No ratings");
 

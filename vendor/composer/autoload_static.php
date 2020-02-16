@@ -6,20 +6,6 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit6f7c60d43beeac5aa306701fb5fa721f
 {
-    public static $prefixLengthsPsr4 = array (
-        'S' => 
-        array (
-            'Smax\\' => 5,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'Smax\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
-    );
-
     public static $classMap = array (
         'Smax\\Main' => __DIR__ . '/../..' . '/src/main.class.php',
         'Smax\\Rating' => __DIR__ . '/../..' . '/src/rating.class.php',
@@ -33,8 +19,6 @@ class ComposerStaticInit6f7c60d43beeac5aa306701fb5fa721f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6f7c60d43beeac5aa306701fb5fa721f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6f7c60d43beeac5aa306701fb5fa721f::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit6f7c60d43beeac5aa306701fb5fa721f::$classMap;
 
         }, null, ClassLoader::class);

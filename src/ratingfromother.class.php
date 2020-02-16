@@ -36,7 +36,7 @@
 		 * @param integer $attitude The algorithm attitude to use, one of the available Smax\ATTITUDE_*. Uses the configured attitude if omitted
 		 * @return double The certainty
 		 */
-		function getCertainty($attitude = \SMAX_ATTITUDE) {
+		function getCertainty($attitude = ATTITUDE_DEFAULT) {
 			$certaintyTable = \Smax\Main::getAlgorithmKey("certaintyTable", \Smax\RATING_TYPE_FROM_OTHER, $attitude);
 			return $certaintyTable[$this->getRating()];
 		}
@@ -45,7 +45,7 @@
 		 * @param integer $attitude The algorithm attitude to use, one of the available Smax\ATTITUDE_*. Uses the configured attitude if omitted
 		 * @return double The power
 		 */
-		function getPower($attitude = \SMAX_ATTITUDE) {
+		function getPower($attitude = ATTITUDE_DEFAULT) {
 			return \Smax\Main::getAlgorithmKey("power", \Smax\RATING_TYPE_FROM_OTHER, $attitude);
 		}
 	}

@@ -30,16 +30,5 @@
 	define("RATING_TYPE_FROM_OTHER", 2);
 	define("RATING_TYPE_FROM_MODERATOR", 3);
 
-	// Include attitudes
-	include SMAX_DIR."/attitudes/humanist.inc.php";
-	include SMAX_DIR."/attitudes/skeptical.inc.php";
-
-	// Include main classes
-	include SMAX_DIR."/main.class.php";
-	include SMAX_DIR."/set.class.php";
-	include SMAX_DIR."/rating.class.php";
-	include SMAX_DIR."/ratingdefault.class.php";
-	include SMAX_DIR."/ratingfromowner.class.php";
-	include SMAX_DIR."/ratingfromother.class.php";
-	include SMAX_DIR."/ratingfrommoderator.class.php";
+	define("ATTITUDE_DEFAULT", ATTITUDE_HUMANIST);
 ?>

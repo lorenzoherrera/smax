@@ -38,7 +38,7 @@
 		 * @param integer $attitude The attitude, one of the available Smax\ATTITUE_*. Uses the default attitude if omitted
 		 * @return string The attitude name
 		 */
-		static function getAttitudeName($attitude = \SMAX_ATTITUDE) {
+		static function getAttitudeName($attitude = ATTITUDE_HUMANIST) {
 			global $smaxAttitudeNames;
 			return $smaxAttitudeNames[$attitude];
 		}
@@ -60,7 +60,7 @@
 		 * @param integer $attitude The attitude to get the algorithm table for, one of the available Smax\ATTITUDE_*		 
 		 * @return mixed The algorithm key value
 		*/
-		static function getAlgorithmKey($key, $ratingType, $attitude = \SMAX_ATTITUDE) {
+		static function getAlgorithmKey($key, $ratingType, $attitude = ATTITUDE_DEFAULT) {
 			global $smaxAlgorithmTables;
 			return $smaxAlgorithmTables[$attitude][$ratingType][$key];
 		}
