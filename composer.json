@@ -14,8 +14,17 @@
         }
     ],
 	"autoload": {
-		"psr-4": {
-			"Smax\\":"src/"
-		}
+		"classmap": [
+			"src/smax.inc.php",
+			"src/main.class.php",
+			"src/rating.class.php",
+			"src/ratingdefault.class.php",
+			"src/ratingfrommoderator.class.php",
+			"src/ratingfromother.class.php",
+			"src/ratingfromowner.class.php",
+			"src/set.class.php",
+			"src/attitudes/humanist.inc.php",
+			"src/attitudes/skeptical.inc.php"
+		]
 	}
 }
